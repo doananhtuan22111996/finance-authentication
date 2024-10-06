@@ -1,0 +1,7 @@
+[versions]
+ohteepee = "1.0.11"
+
+[libraries]
+ohteepee = { group = "com.github.composeuisuite", name = "ohteepee", version.ref = "ohteepee" }
+
+[plugins]
