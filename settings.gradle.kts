@@ -20,8 +20,8 @@ dependencyResolutionManagement {
         mavenCentral()
         maven { url =  uri("https://jitpack.io") }
         maven {
-            val ghUsername = System.getenv("USERNAME") ?: getLocalProperty("USERNAME")
-            val ghPassword = System.getenv("TOKEN") ?: getLocalProperty("TOKEN")
+            val ghUsername = System.getenv("GH_USERNAME") ?: getLocalProperty("GH_USERNAME")
+            val ghPassword = System.getenv("GH_TOKEN") ?: getLocalProperty("GH_TOKEN")
             url = uri("https://maven.pkg.github.com/${ghUsername}/REPOSITORY")
             credentials {
                 username = ghUsername
@@ -30,11 +30,11 @@ dependencyResolutionManagement {
         }
     }
     versionCatalogs {
-        create("mobilex") {
+        create("libs") {
             from("vn.core.libx:versions:1.0.3")
         }
         create("fnlibs") {
-            from("vn.finance.libs:versions:1.0.0")
+            from(files("gradle/finance.versions.toml"))
         }
     }
 }

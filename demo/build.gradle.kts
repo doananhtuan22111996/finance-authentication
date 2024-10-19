@@ -1,8 +1,8 @@
 plugins {
-    alias(mobilex.plugins.androidApplication)
-    alias(mobilex.plugins.kotlinAndroid)
+    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.kotlinAndroid)
     id("kotlin-kapt")
-    alias(mobilex.plugins.androidHilt)
+    alias(libs.plugins.androidHilt)
 }
 
 android {
@@ -56,15 +56,17 @@ dependencies {
     implementation(fnlibs.financeNavigation)
     implementation(fnlibs.financeOnboarding)
     implementation(project(Configs.BuildModule.authenticationPresentation))
+    implementation(project(Configs.BuildModule.authenticationDomain))
+    implementation(project(Configs.BuildModule.authenticationData))
 
-    implementation(mobilex.coreLibxUiComposex)
-    implementation(mobilex.bundles.coreAndroidComponents)
-    implementation(platform(mobilex.androidxComposeBom))
-    implementation(mobilex.bundles.jetpackComposeComponents)
-    implementation(mobilex.androidxHilt)
-    kapt(mobilex.androidxHiltCompiler)
-    testImplementation(mobilex.bundles.composeTestComponents)
-    androidTestImplementation(mobilex.bundles.androidTestComponents)
+    implementation(libs.coreLibxUiComposex)
+    implementation(libs.bundles.coreAndroidComponents)
+    implementation(platform(libs.androidxComposeBom))
+    implementation(libs.bundles.jetpackComposeComponents)
+    implementation(libs.androidxHilt)
+    kapt(libs.androidxHiltCompiler)
+    testImplementation(libs.bundles.composeTestComponents)
+    androidTestImplementation(libs.bundles.androidTestComponents)
 }
 
 kapt {
