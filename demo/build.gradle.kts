@@ -56,8 +56,7 @@ dependencies {
     implementation(fnlibs.financeNavigation)
     implementation(fnlibs.financeOnboarding)
     implementation(project(Configs.BuildModule.authenticationPresentation))
-    implementation(project(Configs.BuildModule.authenticationDomain))
-    implementation(project(Configs.BuildModule.authenticationData))
+    implementation(project(Configs.BuildModule.authenticationBusiness))
 
     implementation(libs.coreLibxUiComposex)
     implementation(libs.bundles.coreAndroidComponents)

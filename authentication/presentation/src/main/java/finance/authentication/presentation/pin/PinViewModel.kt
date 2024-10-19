@@ -3,7 +3,7 @@ package finance.authentication.presentation.pin
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import finance.authentication.domain.usecase.FpPinUseCase
+import vn.finance.authentication.business.domain.usecase.FpPinUseCase
 import finance.authentication.presentation.EMPTY_STRING
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

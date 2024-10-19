@@ -4,16 +4,16 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
-import finance.authentication.domain.repository.FpEmailRepository
-import finance.authentication.domain.repository.FpNewPasswordRepository
-import finance.authentication.domain.repository.FpPinRepository
-import finance.authentication.domain.repository.LoginRepository
-import finance.authentication.domain.repository.SignupRepository
-import finance.authentication.domain.usecase.FpEmailUseCase
-import finance.authentication.domain.usecase.FpNewPasswordUseCase
-import finance.authentication.domain.usecase.FpPinUseCase
-import finance.authentication.domain.usecase.LoginUseCase
-import finance.authentication.domain.usecase.SignupUseCase
+import vn.finance.authentication.business.domain.repository.FpEmailRepository
+import vn.finance.authentication.business.domain.repository.FpNewPasswordRepository
+import vn.finance.authentication.business.domain.repository.FpPinRepository
+import vn.finance.authentication.business.domain.repository.LoginRepository
+import vn.finance.authentication.business.domain.repository.SignupRepository
+import vn.finance.authentication.business.domain.usecase.FpEmailUseCase
+import vn.finance.authentication.business.domain.usecase.FpNewPasswordUseCase
+import vn.finance.authentication.business.domain.usecase.FpPinUseCase
+import vn.finance.authentication.business.domain.usecase.LoginUseCase
+import vn.finance.authentication.business.domain.usecase.SignupUseCase
 
 @Module
 @InstallIn(ViewModelComponent::class)

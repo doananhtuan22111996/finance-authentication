@@ -22,8 +22,12 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Publish Artifact
+      - name: Publish Artifact Presentation
         run: ./gradlew :authentication:presentation:publish
+        continue-on-error: true
+
+      - name: Publish Artifact Business
+        run: ./gradlew :authentication:business:publish
         continue-on-error: true
 
       - name: Sending report to Telegram

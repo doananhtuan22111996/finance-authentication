@@ -7,11 +7,13 @@ plugins {
 }
 
 android {
-    namespace = Configs.namespace
+    namespace = Configs.Business.namespace
     compileSdk = Configs.compileSdk
 
     defaultConfig {
         minSdk = Configs.minSdk
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -30,16 +32,7 @@ android {
         jvmTarget = Configs.jvmTarget
     }
     buildFeatures {
-        compose = true
         buildConfig = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = Configs.kotlinCompilerExtensionVersion
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
     }
     publishing {
         multipleVariants("all") {
@@ -68,29 +61,26 @@ publishing {
                 from(components["all"])
             }
             groupId = Configs.Artifact.groupId
-            artifactId = Configs.Artifact.artifactId
+            artifactId = Configs.Artifact.artifactBusinessId
             version = Configs.Artifact.version
         }
     }
 }
 
 dependencies {
-    implementation(project(Configs.BuildModule.authenticationBusiness))
-    implementation(libs.coreLibxUiComposex)
+
     implementation(libs.coreLibxDomain)
     implementation(libs.coreLibxData)
-    implementation(libs.bundles.coreAndroidComponents)
-    implementation(platform(libs.androidxComposeBom))
-    implementation(libs.bundles.jetpackComposeComponents)
+
     implementation(libs.androidxHilt)
     kapt(libs.androidxHiltCompiler)
+    implementation(libs.retrofit)
+    implementation(libs.retrofitGson)
+    implementation(libs.loggerOkhttp)
     implementation(libs.loggerTimber)
+
     testImplementation(libs.bundles.testComponents)
     androidTestImplementation(libs.bundles.androidTestComponents)
-
-    implementation(fnlibs.financeTheme)
-    implementation(fnlibs.financeNavigation)
-    implementation(fnlibs.ohteepee)
 }
 
 // Allow references to generated code

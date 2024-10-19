@@ -4,16 +4,16 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
-import finance.authentication.data.repository.FpEmailRepositoryImpl
-import finance.authentication.data.repository.FpNewPasswordRepositoryImpl
+import vn.finance.authentication.business.data.repository.FpEmailRepositoryImpl
+import vn.finance.authentication.business.data.repository.FpNewPasswordRepositoryImpl
 import finance.authentication.data.repository.FpPinRepositoryImpl
-import finance.authentication.data.repository.LoginRepositoryImpl
-import finance.authentication.data.repository.SignupRepositoryImpl
-import finance.authentication.domain.repository.FpEmailRepository
-import finance.authentication.domain.repository.FpNewPasswordRepository
-import finance.authentication.domain.repository.FpPinRepository
-import finance.authentication.domain.repository.LoginRepository
-import finance.authentication.domain.repository.SignupRepository
+import vn.finance.authentication.business.data.repository.LoginRepositoryImpl
+import vn.finance.authentication.business.data.repository.SignupRepositoryImpl
+import vn.finance.authentication.business.domain.repository.FpEmailRepository
+import vn.finance.authentication.business.domain.repository.FpNewPasswordRepository
+import vn.finance.authentication.business.domain.repository.FpPinRepository
+import vn.finance.authentication.business.domain.repository.LoginRepository
+import vn.finance.authentication.business.domain.repository.SignupRepository
 
 @Module
 @InstallIn(ViewModelComponent::class)
