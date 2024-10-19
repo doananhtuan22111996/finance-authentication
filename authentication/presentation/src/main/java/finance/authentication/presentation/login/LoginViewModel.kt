@@ -3,7 +3,7 @@ package finance.authentication.presentation.login
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import finance.authentication.domain.usecase.LoginUseCase
+import vn.finance.authentication.business.domain.usecase.LoginUseCase
 import finance.authentication.presentation.EMPTY_STRING
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

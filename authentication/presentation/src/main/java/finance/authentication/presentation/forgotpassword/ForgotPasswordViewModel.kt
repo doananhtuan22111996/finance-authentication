@@ -3,7 +3,7 @@ package finance.authentication.presentation.forgotpassword
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import finance.authentication.domain.usecase.FpEmailUseCase
+import vn.finance.authentication.business.domain.usecase.FpEmailUseCase
 import finance.authentication.presentation.EMPTY_STRING
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

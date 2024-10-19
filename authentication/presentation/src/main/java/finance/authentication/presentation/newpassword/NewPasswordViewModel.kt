@@ -3,9 +3,8 @@ package finance.authentication.presentation.newpassword
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import finance.authentication.domain.usecase.FpNewPasswordUseCase
+import vn.finance.authentication.business.domain.usecase.FpNewPasswordUseCase
 import finance.authentication.presentation.EMPTY_STRING
-import finance.authentication.presentation.isValidPassword
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch

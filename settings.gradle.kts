@@ -56,5 +56,4 @@ rootProject.name = "finance-authentication"
 include(":demo")
 include(":authentication")
 include(":authentication:presentation")
-include(":authentication:domain")
-include(":authentication:data")
+include(":authentication:business")
