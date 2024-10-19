@@ -1,6 +1,6 @@
 plugins {
     id("java-library")
-    alias(mobilex.plugins.jetbrainsKotlinJvm)
+    alias(libs.plugins.jetbrainsKotlinJvm)
 }
 
 java {
@@ -9,7 +9,7 @@ java {
 }
 
 dependencies {
-    implementation(mobilex.coreLibxDomain)
-    implementation(mobilex.androidxCoreCoroutines)
-    compileOnly(mobilex.javax)
+    implementation(libs.coreLibxDomain)
+    implementation(libs.androidxCoreCoroutines)
+    compileOnly(libs.javax)
 }

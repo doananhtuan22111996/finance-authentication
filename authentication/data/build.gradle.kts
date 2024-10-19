@@ -1,8 +1,8 @@
 plugins {
-    alias(mobilex.plugins.kotlinAndroid)
-    alias(mobilex.plugins.androidLibrary)
+    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.androidLibrary)
     id("kotlin-kapt")
-    alias(mobilex.plugins.androidHilt)
+    alias(libs.plugins.androidHilt)
 }
 
 android {
@@ -37,15 +37,18 @@ android {
 
 dependencies {
     implementation(project(Configs.BuildModule.authenticationDomain))
-    implementation(mobilex.coreLibxDomain)
-    implementation(mobilex.coreLibxData)
+    implementation(libs.coreLibxDomain)
+    implementation(libs.coreLibxData)
 
-    implementation(mobilex.androidxHilt)
-    kapt(mobilex.androidxHiltCompiler)
-    implementation(mobilex.retrofit)
-    implementation(mobilex.retrofitGson)
-    implementation(mobilex.loggerOkhttp)
-    implementation(mobilex.loggerTimber)
+    implementation(libs.androidxHilt)
+    kapt(libs.androidxHiltCompiler)
+    implementation(libs.retrofit)
+    implementation(libs.retrofitGson)
+    implementation(libs.loggerOkhttp)
+    implementation(libs.loggerTimber)
+
+    testImplementation(libs.bundles.testComponents)
+    androidTestImplementation(libs.bundles.androidTestComponents)
 }
 
 // Allow references to generated code

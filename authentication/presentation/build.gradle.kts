@@ -1,8 +1,8 @@
 plugins {
-    alias(mobilex.plugins.androidLibrary)
-    alias(mobilex.plugins.kotlinAndroid)
+    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinAndroid)
     id("kotlin-kapt")
-    alias(mobilex.plugins.androidHilt)
+    alias(libs.plugins.androidHilt)
     `maven-publish`
 }
 
@@ -41,11 +41,17 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    publishing {
+        multipleVariants("all") {
+            allVariants()
+            withSourcesJar()
+        }
+    }
 }
 
 publishing {
-    val ghUsername = System.getenv("USERNAME")
-    val ghPassword = System.getenv("TOKEN")
+    val ghUsername = System.getenv("GH_USERNAME")
+    val ghPassword = System.getenv("GH_TOKEN")
     repositories {
         maven {
             name = "GitHubPackages"
@@ -57,9 +63,9 @@ publishing {
         }
     }
     publications {
-        create<MavenPublication>("mavenJava") {
+        create<MavenPublication>("mavenAndroid") {
             afterEvaluate {
-                from(components["release"])
+                from(components["all"])
             }
             groupId = "vn.finance.libs" // Replace with your GitHub username
             artifactId = "feature-authentication"
@@ -71,21 +77,21 @@ publishing {
 dependencies {
     implementation(project(Configs.BuildModule.authenticationDomain))
     implementation(project(Configs.BuildModule.authenticationData))
-    implementation(mobilex.coreLibxUiComposex)
-    implementation(mobilex.coreLibxDomain)
-    implementation(mobilex.coreLibxData)
+    implementation(libs.coreLibxUiComposex)
+    implementation(libs.coreLibxDomain)
+    implementation(libs.coreLibxData)
+    implementation(libs.bundles.coreAndroidComponents)
+    implementation(platform(libs.androidxComposeBom))
+    implementation(libs.bundles.jetpackComposeComponents)
+    implementation(libs.androidxHilt)
+    kapt(libs.androidxHiltCompiler)
+    implementation(libs.loggerTimber)
+    testImplementation(libs.bundles.testComponents)
+    androidTestImplementation(libs.bundles.androidTestComponents)
 
     implementation(fnlibs.financeTheme)
     implementation(fnlibs.financeNavigation)
-
-    implementation(mobilex.bundles.coreAndroidComponents)
-    implementation(platform(mobilex.androidxComposeBom))
-    implementation(mobilex.bundles.jetpackComposeComponents)
-    implementation(mobilex.androidxHilt)
-    kapt(mobilex.androidxHiltCompiler)
-
-    implementation(libs.ohteepee)
-    implementation(mobilex.loggerTimber)
+    implementation(fnlibs.ohteepee)
 }
 
 // Allow references to generated code
