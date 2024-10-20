@@ -1,12 +1,12 @@
 package vn.finance.authentication.business.data
 
-import vn.finance.authentication.business.data.model.TokenRaw
 import retrofit2.Response
 import retrofit2.http.POST
 import retrofit2.http.Query
 import vn.core.data.model.ObjectResponse
+import vn.core.provider.finance.model.TokenRaw
 
-interface ApiService {
+interface AuthenticationApiService {
 
     @POST("/login")
     suspend fun login(

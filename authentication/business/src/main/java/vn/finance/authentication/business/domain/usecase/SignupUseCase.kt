@@ -2,9 +2,9 @@ package vn.finance.authentication.business.domain.usecase
 
 import kotlinx.coroutines.flow.Flow
 import vn.core.domain.ResultModel
+import vn.core.provider.finance.model.TokenModel
 import vn.core.usecase.BaseUseCase
 import vn.finance.authentication.business.domain.Configs.EMPTY_STRING
-import vn.finance.authentication.business.domain.model.TokenModel
 import vn.finance.authentication.business.domain.repository.SignupRepository
 import javax.inject.Inject
 

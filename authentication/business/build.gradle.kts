@@ -68,17 +68,16 @@ publishing {
 }
 
 dependencies {
+    implementation(fnlibs.financeNetworking)
 
     implementation(libs.coreLibxDomain)
     implementation(libs.coreLibxData)
-
     implementation(libs.androidxHilt)
     kapt(libs.androidxHiltCompiler)
     implementation(libs.retrofit)
     implementation(libs.retrofitGson)
     implementation(libs.loggerOkhttp)
     implementation(libs.loggerTimber)
-
     testImplementation(libs.bundles.testComponents)
     androidTestImplementation(libs.bundles.androidTestComponents)
 }

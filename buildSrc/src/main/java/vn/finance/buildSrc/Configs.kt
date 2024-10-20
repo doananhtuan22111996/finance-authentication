@@ -31,7 +31,7 @@ object Configs {
         const val groupId = "vn.finance.libs"
         const val artifactId = "feature-authentication"
         const val artifactBusinessId = "feature-authentication-business"
-        const val version = "1.0.0"
+        const val version = "1.0.1"
     }
 }
 
