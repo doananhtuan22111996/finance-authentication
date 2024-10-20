@@ -1,4 +1,5 @@
 [versions]
+financeNetworking = "1.0.0"
 financeTheme = "1.0.0"
 financeNavigation = "1.0.0"
 financeLaunch = "1.0.0"
@@ -7,6 +8,7 @@ financeOnboarding = "1.0.0"
 ohteepee = "1.0.11"
 
 [libraries]
+financeNetworking = { group = "vn.finance.libs", name = "networking", version.ref = "financeNetworking" }
 financeTheme = { group = "vn.finance.libs", name = "theme", version.ref = "financeTheme" }
 financeLaunch = { group = "vn.finance.libs", name = "feature-launch", version.ref = "financeLaunch" }
 financeNavigation = { group = "vn.finance.libs", name = "navigation", version.ref = "financeNavigation" }

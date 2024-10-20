@@ -2,7 +2,7 @@ package vn.finance.authentication.business.domain.repository
 
 import kotlinx.coroutines.flow.Flow
 import vn.core.domain.ResultModel
-import vn.finance.authentication.business.domain.model.TokenModel
+import vn.core.provider.finance.model.TokenModel
 
 interface LoginRepository {
 

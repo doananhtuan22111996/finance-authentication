@@ -18,6 +18,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        mavenLocal()
         maven { url =  uri("https://jitpack.io") }
         maven {
             val ghUsername = System.getenv("GH_USERNAME") ?: getLocalProperty("GH_USERNAME")

@@ -6,7 +6,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 import vn.finance.authentication.business.data.repository.FpEmailRepositoryImpl
 import vn.finance.authentication.business.data.repository.FpNewPasswordRepositoryImpl
-import finance.authentication.data.repository.FpPinRepositoryImpl
+import vn.finance.authentication.business.data.repository.FpPinRepositoryImpl
 import vn.finance.authentication.business.data.repository.LoginRepositoryImpl
 import vn.finance.authentication.business.data.repository.SignupRepositoryImpl
 import vn.finance.authentication.business.domain.repository.FpEmailRepository

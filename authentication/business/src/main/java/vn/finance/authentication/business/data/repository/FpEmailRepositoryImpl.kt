@@ -1,6 +1,6 @@
 package vn.finance.authentication.business.data.repository
 
-import vn.finance.authentication.business.data.ApiService
+import vn.finance.authentication.business.data.AuthenticationApiService
 import vn.finance.authentication.business.domain.repository.FpEmailRepository
 import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
@@ -12,7 +12,7 @@ import vn.core.domain.ResultModel
 import javax.inject.Inject
 
 class FpEmailRepositoryImpl @Inject constructor(
-    @AnoRetrofitApiService private val apiService: ApiService,
+    @AnoRetrofitApiService private val apiService: AuthenticationApiService,
 ) : FpEmailRepository {
 
     override fun fpEmail(email: String): Flow<ResultModel<Nothing>> =
