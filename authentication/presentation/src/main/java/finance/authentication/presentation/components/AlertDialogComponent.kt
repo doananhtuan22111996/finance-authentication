@@ -15,7 +15,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import finance.authentication.presentation.EMPTY_STRING
-import vn.finance.authentication.R
+import vn.finance.authentication.presentation.R
 
 @Composable
 fun AlertExceptionDialogComponent(

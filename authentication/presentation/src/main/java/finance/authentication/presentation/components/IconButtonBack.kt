@@ -6,7 +6,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import vn.finance.authentication.R
+import vn.finance.authentication.presentation.R
 
 @Composable
 fun IconButtonBack(onClick: () -> Unit) {

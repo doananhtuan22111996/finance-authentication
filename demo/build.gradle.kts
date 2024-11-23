@@ -1,73 +1,25 @@
+import vn.finance.buildSrc.Configs
+
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
-    id("kotlin-kapt")
-    alias(libs.plugins.androidHilt)
+    vn.core.plugins.androidApplication
 }
 
 android {
-    namespace = Configs.Demo.namespace
-    compileSdk = Configs.compileSdk
+    namespace = Configs.Demo.NAMESPACE
 
     defaultConfig {
-        applicationId = Configs.Demo.applicationId
-        minSdk = Configs.minSdk
-        targetSdk = Configs.targetSdk
-        versionCode = Configs.Demo.versionCode
-        versionName = Configs.Demo.versionName
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = Configs.javaVersion
-        targetCompatibility = Configs.javaVersion
-    }
-    kotlinOptions {
-        jvmTarget = Configs.jvmTarget
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = Configs.kotlinCompilerExtensionVersion
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
+        applicationId = Configs.Demo.APPLICATION_ID
+        versionCode = Configs.Demo.VERSION_CODE
+        versionName = Configs.Demo.VERSION_NAME
     }
 }
 
 dependencies {
-    implementation(fnlibs.financeTheme)
-    implementation(fnlibs.financeLaunch)
-    implementation(fnlibs.financeNavigation)
-    implementation(fnlibs.financeOnboarding)
-    implementation(project(Configs.BuildModule.authenticationPresentation))
-    implementation(project(Configs.BuildModule.authenticationBusiness))
+    implementation(project(Configs.BuildModule.AUTHENTICATION_PRESENTATION))
+    implementation(project(Configs.BuildModule.AUTHENTICATION_BUSINESS))
 
-    implementation(libs.coreLibxUiComposex)
-    implementation(libs.bundles.coreAndroidComponents)
-    implementation(platform(libs.androidxComposeBom))
-    implementation(libs.bundles.jetpackComposeComponents)
-    implementation(libs.androidxHilt)
-    kapt(libs.androidxHiltCompiler)
-    testImplementation(libs.bundles.composeTestComponents)
-    androidTestImplementation(libs.bundles.androidTestComponents)
-}
-
-kapt {
-    correctErrorTypes = true
+    implementation(libs.financeTheme)
+    implementation(libs.financeLaunch)
+    implementation(libs.financeNavigation)
+    implementation(libs.financeOnboarding)
 }

@@ -10,6 +10,7 @@ jobs:
     env:
       GH_USERNAME: ${{ secrets.GH_USERNAME }}
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      GH_REPO_NAME: ${{ secrets.GH_REPO_NAME }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 21
@@ -23,11 +24,11 @@ jobs:
         run: chmod +x gradlew
 
       - name: Publish Artifact Presentation
-        run: ./gradlew :authentication:presentation:publish
+        run: ./gradlew :authentication:presentation:publishFeature-authentication-presentationPublicationToPackagesRepository
         continue-on-error: true
 
       - name: Publish Artifact Business
-        run: ./gradlew :authentication:business:publish
+        run: ./gradlew :authentication:business:publishFeature-authentication-businessPublicationToPackagesRepository
         continue-on-error: true
 
       - name: Sending report to Telegram

@@ -33,7 +33,7 @@ import finance.authentication.presentation.isValidEmail
 import finance.authentication.presentation.isValidPassword
 import finance.authentication.presentation.isValidPhoneNumber
 import vn.core.composex.uikit.Container
-import vn.finance.authentication.R
+import vn.finance.authentication.presentation.R
 
 @Composable
 fun SignUpPage(onGoBack: () -> Unit, onGoToLogin: () -> Unit) {
