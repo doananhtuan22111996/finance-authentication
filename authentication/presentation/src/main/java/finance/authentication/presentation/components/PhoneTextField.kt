@@ -14,12 +14,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
-import vn.finance.authentication.R
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.ui.Modifier
 import finance.authentication.presentation.EMPTY_STRING
-import finance.authentication.presentation.isValidEmail
-import java.util.Locale.IsoCountryCode
+import vn.finance.authentication.presentation.R
 
 @Composable
 fun PhoneTextField(

@@ -32,7 +32,7 @@ import finance.authentication.presentation.EMPTY_STRING
 import finance.authentication.presentation.convertMillisToDate
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow
-import vn.finance.authentication.R
+import vn.finance.authentication.presentation.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

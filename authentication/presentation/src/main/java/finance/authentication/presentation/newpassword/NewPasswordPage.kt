@@ -24,7 +24,7 @@ import finance.authentication.presentation.components.IconButtonBack
 import finance.authentication.presentation.components.PasswordTextField
 import finance.authentication.presentation.isValidPassword
 import vn.core.composex.uikit.Container
-import vn.finance.authentication.R
+import vn.finance.authentication.presentation.R
 
 @Composable
 fun NewPasswordPage(

@@ -22,10 +22,9 @@ import finance.authentication.presentation.components.EmailTextField
 import finance.authentication.presentation.components.FullScreenLoadingDialogComponent
 import finance.authentication.presentation.components.IconButtonBack
 import finance.authentication.presentation.isValidEmail
-import finance.authentication.presentation.isValidPassword
 import vn.core.composex.uikit.Container
 import vn.core.domain.ResultModel
-import vn.finance.authentication.R
+import vn.finance.authentication.presentation.R
 
 @Composable
 fun ForgotPasswordPage(
