@@ -25,10 +25,11 @@ publishing {
 
 dependencies {
     implementation(project(Configs.BuildModule.AUTHENTICATION_BUSINESS))
+    implementation(project(Configs.BuildModule.AUTHENTICATION_API))
+
     implementation(libs.coreCompose)
     implementation(libs.coreDomain)
     implementation(libs.coreData)
-    implementation(libs.financeTheme)
-    implementation(libs.financeNavigation)
+    implementation(libs.financeOnboardingApi)
     implementation(libs.ohteepee)
 }

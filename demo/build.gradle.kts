@@ -18,8 +18,8 @@ dependencies {
     implementation(project(Configs.BuildModule.AUTHENTICATION_PRESENTATION))
     implementation(project(Configs.BuildModule.AUTHENTICATION_BUSINESS))
 
+    implementation(libs.coreCompose)
     implementation(libs.financeTheme)
     implementation(libs.financeLaunch)
-    implementation(libs.financeNavigation)
-    implementation(libs.financeOnboarding)
+    implementation(libs.financeOnboardingApi)
 }
