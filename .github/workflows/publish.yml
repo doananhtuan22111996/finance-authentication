@@ -31,6 +31,10 @@ jobs:
         run: ./gradlew :authentication:business:publishFeature-authentication-businessPublicationToPackagesRepository
         continue-on-error: true
 
+      - name: Publish Artifact Api
+        run: ./gradlew :authenticationApi:publishFeature-authentication-apiPublicationToPackagesRepository
+        continue-on-error: true
+
       - name: Sending report to Telegram
         uses: appleboy/telegram-action@master
         with:

@@ -1,38 +1,35 @@
 package finance.authentication.presentation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import finance.authentication.presentation.forgotpassword.ForgotPasswordPage
 import finance.authentication.presentation.login.LoginPage
 import finance.authentication.presentation.newpassword.NewPasswordPage
 import finance.authentication.presentation.pin.PinPage
 import finance.authentication.presentation.signup.SignUpPage
-import vn.finance.navigation.NavigationKey
-import vn.finance.navigation.NavigationManager
 
-const val LOGIN = "login"
-const val FORGOT_PASSWORD = "forgot-password"
-const val SIGN_UP = "sign-up"
-const val PIN = "pin"
-const val NEW_PASSWORD = "new-password"
-const val BIOMETRIC = "biometric"
+private const val LOGIN = "login"
+private const val FORGOT_PASSWORD = "forgot-password"
+private const val SIGN_UP = "sign-up"
+private const val PIN = "pin"
+private const val NEW_PASSWORD = "new-password"
 
 @Composable
-fun AuthenticationNavHost(navigationManager: NavigationManager, navController: NavHostController) {
-    val context = LocalContext.current
+fun AuthenticationNavHost(onGoToHome: () -> Unit) {
+    val navController = rememberNavController()
     NavHost(navController = navController, startDestination = LOGIN) {
         composable(LOGIN) {
-            LoginPage(onGotoForgotPassword = {
-                navController.navigate(FORGOT_PASSWORD)
-            }, onGotoSignUp = {
-                navController.navigate(SIGN_UP)
-            }, onGotoHome = {
-                navigationManager.startActivityByKey(context, NavigationKey.Home())
-                context.getActivity()?.finish()
-            })
+            LoginPage(
+                onGotoForgotPassword = {
+                    navController.navigate(FORGOT_PASSWORD)
+                },
+                onGotoSignUp = {
+                    navController.navigate(SIGN_UP)
+                },
+                onGotoHome = onGoToHome,
+            )
         }
         composable(FORGOT_PASSWORD) {
             ForgotPasswordPage(onGotoPin = { navController.navigate(PIN) }, onGoBack = {

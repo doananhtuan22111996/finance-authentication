@@ -4,6 +4,7 @@ object Configs {
     object BuildModule {
         const val AUTHENTICATION_PRESENTATION = ":authentication:presentation"
         const val AUTHENTICATION_BUSINESS = ":authentication:business"
+        const val AUTHENTICATION_API = ":authenticationApi"
     }
 
     object Demo {
@@ -16,12 +17,14 @@ object Configs {
     object Authentication {
         const val NAMESPACE_PRESENTATION = "vn.finance.authentication.presentation"
         const val NAMESPACE_BUSINESS = "vn.finance.authentication.business"
+        const val NAMESPACE_API = "vn.finance.authentication.api"
     }
 
     object Artifact {
         const val GROUP_ID = "vn.finance.libs"
         const val ARTIFACT_PRESENTATION_ID = "feature-authentication-presentation"
         const val ARTIFACT_BUSINESS_ID = "feature-authentication-business"
-        const val VERSION = "1.0.2"
+        const val ARTIFACT_API_ID = "feature-authentication-api"
+        const val VERSION = "1.0.3"
     }
 }

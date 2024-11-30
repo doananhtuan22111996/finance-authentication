@@ -5,9 +5,8 @@ coreData = "1.0.0"
 coreCompose = "1.0.0"
 
 financeTheme = "1.0.1"
-financeNavigation = "1.0.2"
 financeLaunch = "1.0.1"
-financeOnboarding = "1.0.1"
+financeOnboarding = "1.0.2"
 
 provideNetworking = "1.0.0"
 
@@ -22,8 +21,7 @@ coreCompose = { group = "vn.core.libs", name = "compose", version.ref = "coreCom
 provideNetworking = { group = "vn.core.provider", name = "finance-networking", version.ref = "provideNetworking" }
 financeTheme = { group = "vn.finance.libs", name = "theme", version.ref = "financeTheme" }
 financeLaunch = { group = "vn.finance.libs", name = "feature-launch", version.ref = "financeLaunch" }
-financeNavigation = { group = "vn.finance.libs", name = "navigation", version.ref = "financeNavigation" }
-financeOnboarding = { group = "vn.finance.libs", name = "feature-onboarding", version.ref = "financeOnboarding" }
+financeOnboardingApi = { group = "vn.finance.libs", name = "feature-onboarding-api", version.ref = "financeOnboarding" }
 
 ohteepee = { group = "com.github.composeuisuite", name = "ohteepee", version.ref = "ohteepee" }
 

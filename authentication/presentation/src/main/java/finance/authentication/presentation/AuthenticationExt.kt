@@ -8,6 +8,7 @@ import androidx.activity.ComponentActivity
 import java.util.Date
 import java.util.Locale
 
+const val PATH = "authentication"
 const val EMPTY_STRING = ""
 const val OTP_LENGTH = 6
 const val DOB_FORMAT = "dd/MM/yyyy"
