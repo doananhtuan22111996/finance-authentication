@@ -19,20 +19,20 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import finance.authentication.presentation.components.AlertExceptionDialogComponent
-import finance.authentication.presentation.components.AppDatePicker
-import finance.authentication.presentation.components.AppHtmlText
-import finance.authentication.presentation.components.AppTextField
-import finance.authentication.presentation.components.EmailTextField
-import finance.authentication.presentation.components.FullScreenLoadingDialogComponent
-import finance.authentication.presentation.components.FullScreenSuccessDialogComponent
-import finance.authentication.presentation.components.IconButtonBack
-import finance.authentication.presentation.components.PasswordTextField
-import finance.authentication.presentation.components.PhoneTextField
 import finance.authentication.presentation.isValidEmail
 import finance.authentication.presentation.isValidPassword
 import finance.authentication.presentation.isValidPhoneNumber
 import vn.core.composex.uikit.Container
+import vn.core.composex.uikit.alert.AlertExceptionDialogComponent
+import vn.core.composex.uikit.button.IconBackButton
+import vn.core.composex.uikit.dialog.FullScreenSuccessDialogComponent
+import vn.core.composex.uikit.loading.FullScreenLoadingDialogComponent
+import vn.core.composex.uikit.picker.AppDatePicker
+import vn.core.composex.uikit.textField.AppEmailTextField
+import vn.core.composex.uikit.textField.AppHtmlText
+import vn.core.composex.uikit.textField.AppTextField
+import vn.core.composex.uikit.textField.PasswordTextField
+import vn.core.composex.uikit.textField.PhoneTextField
 import vn.finance.authentication.presentation.R
 
 @Composable
@@ -56,7 +56,7 @@ fun SignUpPage(onGoBack: () -> Unit, onGoToLogin: () -> Unit) {
     val appException by viewModel.appException.collectAsStateWithLifecycle()
 
     Container(appBarTitle = stringResource(R.string.sign_up), navigationIcon = {
-        IconButtonBack(onClick = onGoBack)
+        IconBackButton(onClick = onGoBack)
     }) { innerPadding ->
         Column(
             modifier = Modifier
@@ -81,7 +81,7 @@ fun SignUpPage(onGoBack: () -> Unit, onGoToLogin: () -> Unit) {
                 }
 
             )
-            EmailTextField(onValueChange = { value ->
+            AppEmailTextField(onValueChange = { value ->
                 viewModel.onEmailChange(value)
             }, onValidator = { value ->
                 val isValid = value.isValidEmail()

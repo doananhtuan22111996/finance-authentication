@@ -21,14 +21,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import finance.authentication.presentation.components.AlertExceptionDialogComponent
-import finance.authentication.presentation.components.EmailTextField
-import finance.authentication.presentation.components.FullScreenLoadingDialogComponent
-import finance.authentication.presentation.components.FullScreenSuccessDialogComponent
-import finance.authentication.presentation.components.PasswordTextField
 import finance.authentication.presentation.isValidEmail
 import finance.authentication.presentation.isValidPassword
 import vn.core.composex.uikit.Container
+import vn.core.composex.uikit.alert.AlertExceptionDialogComponent
+import vn.core.composex.uikit.dialog.FullScreenSuccessDialogComponent
+import vn.core.composex.uikit.loading.FullScreenLoadingDialogComponent
+import vn.core.composex.uikit.textField.AppEmailTextField
+import vn.core.composex.uikit.textField.PasswordTextField
 import vn.finance.authentication.presentation.R
 
 @Composable
@@ -59,7 +59,7 @@ fun LoginPage(
                 .padding(horizontal = 16.dp)
                 .verticalScroll(rememberScrollState())
         ) {
-            EmailTextField(onValueChange = { text ->
+            AppEmailTextField(onValueChange = { text ->
                 viewModel.onEmailChange(text)
             }, onValidator = { value ->
                 val isValid = value.isValidEmail()

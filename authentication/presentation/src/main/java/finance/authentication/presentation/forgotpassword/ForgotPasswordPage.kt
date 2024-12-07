@@ -17,12 +17,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import finance.authentication.presentation.components.AlertExceptionDialogComponent
-import finance.authentication.presentation.components.EmailTextField
-import finance.authentication.presentation.components.FullScreenLoadingDialogComponent
-import finance.authentication.presentation.components.IconButtonBack
 import finance.authentication.presentation.isValidEmail
 import vn.core.composex.uikit.Container
+import vn.core.composex.uikit.alert.AlertExceptionDialogComponent
+import vn.core.composex.uikit.button.IconBackButton
+import vn.core.composex.uikit.loading.FullScreenLoadingDialogComponent
+import vn.core.composex.uikit.textField.AppEmailTextField
 import vn.core.domain.ResultModel
 import vn.finance.authentication.presentation.R
 
@@ -40,7 +40,7 @@ fun ForgotPasswordPage(
         stringResource(R.string.invalid_email_format_please_enter_a_valid_email)
 
     Container(appBarTitle = stringResource(R.string.forgot_password), navigationIcon = {
-        IconButtonBack(onClick = onGoBack)
+        IconBackButton(onClick = onGoBack)
     }) { innerPadding ->
         Column(
             modifier = Modifier
@@ -54,17 +54,20 @@ fun ForgotPasswordPage(
                 style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.SemiBold)
             )
             Text(stringResource(R.string.lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_sed_do_eiusmod_tempor_incididunt_ut_labore_et_dolore_magna_aliqua))
-            EmailTextField(modifier = Modifier.padding(vertical = 16.dp), onValueChange = { text ->
-                viewModel.onEmailChange(text)
-            }, onValidator = { value ->
-                val isValid = value.isValidEmail()
-                viewModel.onValidEmail(isValid)
-                if (isValid) {
-                    null
-                } else {
-                    invalidEmailMessage
-                }
-            })
+            AppEmailTextField(
+                modifier = Modifier.padding(vertical = 16.dp),
+                onValueChange = { text ->
+                    viewModel.onEmailChange(text)
+                },
+                onValidator = { value ->
+                    val isValid = value.isValidEmail()
+                    viewModel.onValidEmail(isValid)
+                    if (isValid) {
+                        null
+                    } else {
+                        invalidEmailMessage
+                    }
+                })
             Button(
                 onClick = { viewModel.onFpEmail() },
                 modifier = Modifier.fillMaxWidth(),
