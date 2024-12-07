@@ -18,11 +18,11 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import finance.authentication.presentation.OTP_LENGTH
-import finance.authentication.presentation.components.AlertExceptionDialogComponent
-import finance.authentication.presentation.components.FullScreenLoadingDialogComponent
-import finance.authentication.presentation.components.IconButtonBack
 import finance.authentication.presentation.components.OtpComponent
 import vn.core.composex.uikit.Container
+import vn.core.composex.uikit.alert.AlertExceptionDialogComponent
+import vn.core.composex.uikit.button.IconBackButton
+import vn.core.composex.uikit.loading.FullScreenLoadingDialogComponent
 import vn.core.domain.ResultModel
 import vn.finance.authentication.presentation.R
 
@@ -38,7 +38,7 @@ fun PinPage(
     val appException by viewModel.appException.collectAsStateWithLifecycle()
 
     Container(appBarTitle = stringResource(R.string.security_pin), navigationIcon = {
-        IconButtonBack(onClick = onGoBack)
+        IconBackButton(onClick = onGoBack)
     }) { innerPadding ->
         Column(
             modifier = Modifier

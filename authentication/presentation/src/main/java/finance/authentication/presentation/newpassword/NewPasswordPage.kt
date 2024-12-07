@@ -17,13 +17,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import finance.authentication.presentation.components.AlertExceptionDialogComponent
-import finance.authentication.presentation.components.FullScreenLoadingDialogComponent
-import finance.authentication.presentation.components.FullScreenSuccessDialogComponent
-import finance.authentication.presentation.components.IconButtonBack
-import finance.authentication.presentation.components.PasswordTextField
 import finance.authentication.presentation.isValidPassword
 import vn.core.composex.uikit.Container
+import vn.core.composex.uikit.alert.AlertExceptionDialogComponent
+import vn.core.composex.uikit.button.IconBackButton
+import vn.core.composex.uikit.dialog.FullScreenSuccessDialogComponent
+import vn.core.composex.uikit.loading.FullScreenLoadingDialogComponent
+import vn.core.composex.uikit.textField.PasswordTextField
 import vn.finance.authentication.presentation.R
 
 @Composable
@@ -43,7 +43,7 @@ fun NewPasswordPage(
     val appException by viewModel.appException.collectAsStateWithLifecycle()
 
     Container(appBarTitle = stringResource(R.string.new_password), navigationIcon = {
-        IconButtonBack(onClick = onGoBack)
+        IconBackButton(onClick = onGoBack)
     }) { innerPadding ->
         Column(
             modifier = Modifier
@@ -62,31 +62,22 @@ fun NewPasswordPage(
             }, onValidator = { value ->
                 val isValid = value.isValidPassword()
                 viewModel.onValidPassword(isValid)
-                if (isValid)
-                    null
-                else
-                    invalidPasswordMessage
+                if (isValid) null
+                else invalidPasswordMessage
             })
-            PasswordTextField(
-                modifier = Modifier.padding(vertical = 8.dp),
-                label = {
-                    Text(
-                        text = stringResource(R.string.confirm_new_password),
-                        style = MaterialTheme.typography.labelMedium
-                    )
-                },
-                onValueChange = { text ->
-                    viewModel.onConfirmNewPasswordChange(text)
-                },
-                onValidator = { value ->
-                    val isValid = value.isValidPassword()
-                    viewModel.onValidConfirmPassword(isValid)
-                    if (isValid)
-                        null
-                    else
-                        invalidPasswordMessage
-                }
-            )
+            PasswordTextField(modifier = Modifier.padding(vertical = 8.dp), label = {
+                Text(
+                    text = stringResource(R.string.confirm_new_password),
+                    style = MaterialTheme.typography.labelMedium
+                )
+            }, onValueChange = { text ->
+                viewModel.onConfirmNewPasswordChange(text)
+            }, onValidator = { value ->
+                val isValid = value.isValidPassword()
+                viewModel.onValidConfirmPassword(isValid)
+                if (isValid) null
+                else invalidPasswordMessage
+            })
             Button(
                 onClick = {
                     viewModel.onNewPassword()
