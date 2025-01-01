@@ -7,4 +7,6 @@ import vn.core.provider.finance.model.TokenModel
 interface LoginRepository {
 
     fun login(email: String, password: String): Flow<ResultModel<TokenModel>>
+
+    fun getLoggedIn() : Flow<ResultModel<Boolean>>
 }

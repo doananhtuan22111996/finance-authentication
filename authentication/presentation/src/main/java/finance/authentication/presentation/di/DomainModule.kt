@@ -12,6 +12,7 @@ import vn.finance.authentication.business.domain.repository.SignupRepository
 import vn.finance.authentication.business.domain.usecase.FpEmailUseCase
 import vn.finance.authentication.business.domain.usecase.FpNewPasswordUseCase
 import vn.finance.authentication.business.domain.usecase.FpPinUseCase
+import vn.finance.authentication.business.domain.usecase.GetLoggedInUseCase
 import vn.finance.authentication.business.domain.usecase.LoginUseCase
 import vn.finance.authentication.business.domain.usecase.SignupUseCase
 
@@ -38,4 +39,8 @@ class DomainModule {
     @Provides
     fun providesSignupUseCase(repository: SignupRepository): SignupUseCase =
         SignupUseCase(repository = repository)
+
+    @Provides
+    fun providesGetLoggedInUseCase(repository: LoginRepository): GetLoggedInUseCase =
+        GetLoggedInUseCase(repository = repository)
 }

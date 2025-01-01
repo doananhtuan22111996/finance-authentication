@@ -4,12 +4,14 @@ import vn.finance.authentication.business.data.AuthenticationApiService
 import vn.finance.authentication.business.data.Configs.EMPTY_STRING
 import vn.finance.authentication.business.domain.repository.LoginRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import retrofit2.Response
 import vn.core.data.di.AnoRetrofitApiService
 import vn.core.data.local.PreferenceWrapper
 import vn.core.data.model.ObjectResponse
 import vn.core.data.network.NetworkBoundService
 import vn.core.domain.ResultModel
+import vn.core.domain.TypeException
 import vn.core.provider.finance.Configs
 import vn.core.provider.finance.model.TokenModel
 import vn.core.provider.finance.model.TokenRaw
@@ -38,4 +40,14 @@ class LoginRepositoryImpl @Inject constructor(
                 return ResultModel.Success(data = request?.data?.raw2Model() as? TokenModel)
             }
         }.build()
+
+    override fun getLoggedIn(): Flow<ResultModel<Boolean>> = flow {
+        try {
+            val token =
+                preferenceWrapper.getString(Configs.SharePreference.KEY_AUTH_TOKEN, EMPTY_STRING)
+            ResultModel.Success(data = token.isNotEmpty())
+        } catch (e: Exception) {
+            ResultModel.AppException(type = TypeException.Local, message = e.message)
+        }
+    }
 }
