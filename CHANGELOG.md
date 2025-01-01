@@ -1,4 +1,12 @@
 
+<a name="1.0.5"></a>
+## [1.0.5](https://github.com/doananhtuan22111996/finance-authentication/compare/1.0.4...1.0.5) (2025-01-01)
+
+### Features
+
+* Add GetLoggedInProvider API and integrate with LoginRepository ([#10](https://github.com/doananhtuan22111996/finance-authentication/issues/10))
+
+
 <a name="1.0.4"></a>
 ## 1.0.4 (2024-12-07)
 

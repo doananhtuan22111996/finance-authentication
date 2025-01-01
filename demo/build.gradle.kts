@@ -17,6 +17,7 @@ android {
 dependencies {
     implementation(project(Configs.BuildModule.AUTHENTICATION_PRESENTATION))
     implementation(project(Configs.BuildModule.AUTHENTICATION_BUSINESS))
+    implementation(project(Configs.BuildModule.AUTHENTICATION_API))
 
     implementation(libs.coreCompose)
     implementation(libs.financeTheme)
