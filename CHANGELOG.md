@@ -1,4 +1,12 @@
 
+<a name="1.0.6"></a>
+## [1.0.6](https://github.com/doananhtuan22111996/finance-authentication/compare/1.0.5...1.0.6) (2025-01-01)
+
+### Bug Fixes
+
+* Add DemoViewModel to manage login state and update dependencies ([#11](https://github.com/doananhtuan22111996/finance-authentication/issues/11))
+
+
 <a name="1.0.5"></a>
 ## [1.0.5](https://github.com/doananhtuan22111996/finance-authentication/compare/1.0.4...1.0.5) (2025-01-01)
 
