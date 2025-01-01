@@ -45,9 +45,9 @@ class LoginRepositoryImpl @Inject constructor(
         try {
             val token =
                 preferenceWrapper.getString(Configs.SharePreference.KEY_AUTH_TOKEN, EMPTY_STRING)
-            ResultModel.Success(data = token.isNotEmpty())
+            emit(ResultModel.Success(data = token.isNotEmpty()))
         } catch (e: Exception) {
-            ResultModel.AppException(type = TypeException.Local, message = e.message)
+            emit(ResultModel.AppException(type = TypeException.Local, message = e.message))
         }
     }
 }
