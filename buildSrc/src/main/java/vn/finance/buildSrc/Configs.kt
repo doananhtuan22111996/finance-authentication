@@ -25,6 +25,6 @@ object Configs {
         const val ARTIFACT_PRESENTATION_ID = "feature-authentication-presentation"
         const val ARTIFACT_BUSINESS_ID = "feature-authentication-business"
         const val ARTIFACT_API_ID = "feature-authentication-api"
-        const val VERSION = "1.0.6"
+        const val VERSION = "1.0.7"
     }
 }

@@ -9,7 +9,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ElevatedButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -17,7 +16,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -25,7 +23,7 @@ import finance.authentication.presentation.isValidEmail
 import finance.authentication.presentation.isValidPassword
 import vn.core.composex.uikit.Container
 import vn.core.composex.uikit.alert.AlertExceptionDialogComponent
-import vn.core.composex.uikit.dialog.FullScreenSuccessDialogComponent
+import vn.core.composex.uikit.alert.AlertSuccessDialogComponent
 import vn.core.composex.uikit.loading.FullScreenLoadingDialogComponent
 import vn.core.composex.uikit.textField.AppEmailTextField
 import vn.core.composex.uikit.textField.PasswordTextField
@@ -110,16 +108,13 @@ fun LoginPage(
             }
 
             if (isSuccessfully) {
-                FullScreenSuccessDialogComponent(content = {
-                    Text(
-                        stringResource(R.string.login_successful_welcome),
-                        style = MaterialTheme.typography.headlineSmall,
-                        textAlign = TextAlign.Center
-                    )
-                }, onDismissRequest = {
-                    viewModel.onSuccessfullyDismiss()
-                    onGotoHome()
-                })
+                AlertSuccessDialogComponent(
+                    title = stringResource(R.string.login_success),
+                    message = stringResource(R.string.login_successful_welcome),
+                    onDismissRequest = {
+                        viewModel.onSuccessfullyDismiss()
+                        onGotoHome()
+                    })
             }
 
             if (appException != null) {

@@ -44,4 +44,5 @@
     <string name="please_enter_a_valid_phone_number">Please enter a valid phone number.</string>
     <string name="success_your_account_has_been_created">Success! Your account has been created.</string>
     <string name="unable_to_create_your_account_please_verify_your_information_and_try_again">Unable to create your account. Please verify your information and try again.</string>
+    <string name="login_success">Login Success</string>
 </resources>
